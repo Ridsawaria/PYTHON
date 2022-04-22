@@ -1,76 +1,101 @@
-sub = ("Maths","Science","English")
-n = input("Number of students you want to enter :")  
-n = int(n) 
+sub = ("Reading","Speaking","Listening","Writing")
+n = input("Enter Number Of Students: ")
+n = int(n)
 
-roll = [] 
-name=[]
+subject=[]
+roll = []
+name = []
 result={}
 
-for i in range (n): 
-    r=input("Enter Id of the student : ")
-    r=int(r)
-    n1=input("Enter name of the student : ")
-    roll.append(r) 
-    name.append(n1) 
 
-    m1=input("Enter marks of Maths : ")  
-    m1=int(m1)
-    m2=input("Enter marks of Science : ")
-    m2=int(m2)
-    m3=input("Enter marks of English : ")
-    m3=int(m3)
-    temp=(m1,m2,m3) 
-    result[r] = temp 
+for i in range(n):
+    r = input("enter id")
+    r = int(r)
+    n1 = input("enter name")
+    roll.append(r)
+    name.append(n1)
+
+    print("Enter 4 Subject Marks ")
+    s1 = input("Enter Reading Marks: ")  
+    s1 = int(s1)
+    s2 = input("Enter Speaking Marks: ")
+    s2 = int( s2)
+    s3 = input("Enter Listening Marks: ")  
+    s3 = int(s3)
+    s4 = input("Enter Writing Marks: ")
+    s4 = int(s4)
+    temp = (s1,s2,s3,s4)
+    result[r]=temp
+
+print("Highest in individual subject: ")
+
+print("Total Qualified and their Name: ")
+
+print("Total Not Qualified and their Name: ")
+
+print("Name and Score of Ranker / Highest Scorer: ")
 
 
+    
+       
 print(result)
-mt=[] 
-sc=[]
-en=[]
-
-
+s1=[] 
+s2=[]
+s3=[]
+s4=[]
 
 for j in result.keys():
     t=result[j] 
-    mt.append(t[0]) 
-    sc.append(t[1]) 
-    en.append(t[2]) 
+    s1.append(t[0]) 
+    s2.append(t[1]) 
+    s3.append(t[2])
+    s4.append(t[3])
 
-
-mh=max(mt) 
-sh=max(sc)
-eh=max(en)
+s1=max(s1) 
+s2=max(s2)
+s3=max(s3)
+s4=max(s4)
 
 
 for j in result.keys():
     t = result[j]
-    if(t[0] == mh): 
-        print("Maths")
-        print(mh)
+    if(t[0] == s1): 
+        print("Reading")
+        print(s1)
         te = roll.index(j) 
         print(name[te])
-        final=("maths",mh,name[te])
+        final=("Reading",s1,name[te])
         print(final)
 
-    if(t[1] == sh):
-        print("Science")
-        print(sh)
-        te = roll.index(j)
+    if(t[1] == s2): 
+        print("Speaking")
+        print(s2)
+        te = roll.index(j) 
         print(name[te])
-        final=("Science",sh,name[te])
+        final=("Reading",s2,name[te])
         print(final)
 
-    if(t[2] == eh):
-        print("english")
-        print(eh)
-        te = roll.index(j)
+    if(t[2] == s3): 
+        print("Listening")
+        print(s3)
+        te = roll.index(j) 
         print(name[te])
-        final=("english",eh,name[te])
+        final=("Listening",s3,name[te])
+        print(final)
+
+    if(t[3] == s4): 
+        print("Writing")
+        print(s4)
+        te = roll.index(j) 
+        print(name[te])
+        final=("Writing",s4,name[te])
         print(final)
 
 
-
-
-
-
-
+for k in result:
+    if(k>=6):
+        print("candiata pass thaigayo")
+        print()
+    elif(k<6):
+         print("candidate fail thaigayo")
+         print()
