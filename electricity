@@ -1,0 +1,45 @@
+cd={1:234,2:350,3:123,4:560}              
+n=["Riya","Jaimin","Vishva","Jeet"]
+cust_type=["C","D","C","D"]
+n1=int(input("Enter Number of Customer :- "))
+i =0
+while(i<n1):
+   c=input("Enter Customer id : - ")
+   c=int(c)
+   ut=int(input("Total Unit used :- "))
+   cd[c]=ut
+   nm=input("Enter Customer Name :- ")
+   n.insert(i,nm)
+   ct=input("Enter Customer Type :- ")
+   cust_type.insert(i,ct)
+   i=i+1'''
+
+print(cd)
+print(n)
+print(cust_type)
+
+j=0
+for i in cd.keys():
+    temp=cd[i]
+    if(temp>501):
+        r=7.5
+        t=18
+    elif((temp>301) and (temp<500)):
+        r=5.5
+        t=15
+    else:
+        r=3.5
+        t=12
+    amt=temp*r
+    amt=amt+((amt*t)/100)
+   
+    k=cust_type[j]
+    if(k=="C"):
+        amt=amt+((amt*10)/100)
+    elif (k=="D"):
+        amt=amt-((amt*5)/100)
+   
+    
+    print(n[j] + " " + k + " " +str(amt))
+    j=j+1
+    
