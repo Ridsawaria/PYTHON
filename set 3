@@ -31,7 +31,7 @@ print(sum)
 print(res)
 
 print(name,los[0],sum[0],los[1],sum[1],los[2],sum[2],los[0],high[0],los[1],high[1],los[2],high[2])
-if(p > 2):
+if(p >= 2):
     print("Pass")
 
 
