@@ -22,8 +22,7 @@ while(i<3):
         count = count + mark
         j = j + 1
     res[los[i]] = m
-    if(count > 50):
-        p = p + 1
+    
     sum.append(count)
     high.append(h)
     i = i + 1
@@ -31,8 +30,10 @@ print(sum)
 print(res)
 
 print(name,los[0],sum[0],los[1],sum[1],los[2],sum[2],los[0],high[0],los[1],high[1],los[2],high[2])
-if(p >= 2):
+p = ( sum[0] + sum[1] + sum[2] ) * (100 / 900)
+if(p > 50):
     print("Pass")
-
+else:
+    print("Fail")
 
 
